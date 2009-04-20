@@ -32,69 +32,14 @@ package pl.graniec.coralreef.geometry;
  * @author Piotr Korzuszek <piotr.korzuszek@gmail.com>
  *
  */
-public class Vector2 {
-	/**
-	 * Calculates angle of given vector <code>x</code> and <code>y</code>
-	 * components. The value is calculated from positive X axis and increasing
-	 * counter clockwise.
-	 * 
-	 * @param x The x component
-	 * @param y The y component
-	 * 
-	 * @return Angle value in degrees from -180 to 180.
-	 */
-	public static final float angle(final float x, final float y) {
-		
-		final float[] n = normalize(x, y); 
-		
-		final float acos = (float) Math.toDegrees(Math.acos(n[0]));
-		final float asin = (float) Math.toDegrees(Math.asin(n[1]));
-		
-		return (asin >= 0 ? acos : -acos);
-	}
+public class Triangle {
+	public final Point2 a, b, c;
 
-	public static final float length(final float x, final float y) {
-		return (float) StrictMath.sqrt(x * x + y * y);
-	}
-	
-	
-	/**
-	 * Normalizes the vector components <code>x</code> and
-	 * <code>y</code> to length of 1. Result is returned as float
-	 * array where 0 index is new x component and 1 is new y component.
-	 * 
-	 * @param x The x component
-	 * @param y The y component
-	 * 
-	 * @return Normalized vector x and y components.
-	 */
-	private static final float[] normalize(final float x, final float y) {
-		final float[] result = new float[2];
-		final float length = length(x, y);
-		
-		result[0] = x / length;
-		result[1] = y / length;
-		
-		return result;
-	}
-	
-	public float x, y;
-	
-	public Vector2(float x, float y) {
+	public Triangle(Point2 a, Point2 b, Point2 c) {
 		super();
-		this.x = x;
-		this.y = y;
+		this.a = a;
+		this.b = b;
+		this.c = c;
 	}
 	
-	/**
-	 * Calculates angle of given vector.
-	 * The value is calculated from positive X axis and increasing
-	 * counter clockwise.
-	 * 
-	 * 
-	 * @return Angle value in degrees from -180 to 180.
-	 */
-	public final float angle() {
-		return angle(x, y);
-	}
 }
