@@ -48,7 +48,7 @@ public class Vector2 {
 		final float acos = (float) Math.toDegrees(Math.acos(n[0]));
 		final float asin = (float) Math.toDegrees(Math.asin(n[1]));
 		
-		return (asin >= 0 ? acos : 360f - acos);
+		return (asin >= 0 ? acos : -acos);
 	}
 	
 	private static final float[] normalize(final float x, final float y) {

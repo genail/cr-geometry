@@ -53,14 +53,14 @@ public class Vector2Test {
 	 */
 	@Test
 	public void testAngle() {
-		assertEquals(0f, Vector2.angle(1, 0));
-		assertEquals(45f, Vector2.angle(1, 1));
-		assertEquals(90f, Vector2.angle(0, 1));
-		assertEquals(135f, Vector2.angle(-1, 1));
-		assertEquals(180f, Vector2.angle(-1, 0));
-		assertEquals(225f, Vector2.angle(-1, -1));
-		assertEquals(270f, Vector2.angle(0, -1));
-		assertEquals(315f, Vector2.angle(1, -1));
+		assertEquals(0f, Vector2.angle(1, 0), 0.0001f);
+		assertEquals(45f, Vector2.angle(1, 1), 0.0001f);
+		assertEquals(90f, Vector2.angle(0, 1), 0.0001f);
+		assertEquals(135f, Vector2.angle(-1, 1), 0.0001f);
+		assertEquals(180f, Vector2.angle(-1, 0), 0.0001f);
+		assertEquals(-135f, Vector2.angle(-1, -1), 0.0001f);
+		assertEquals(-90f, Vector2.angle(0, -1), 0.0001f);
+		assertEquals(-45f, Vector2.angle(1, -1), 0.0001f);
 	}
 
 }
