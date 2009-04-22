@@ -28,6 +28,9 @@
  */
 package pl.graniec.coralreef.geometry.triangulation;
 
+import java.util.LinkedList;
+import java.util.List;
+
 import pl.graniec.coralreef.geometry.Geometry;
 import pl.graniec.coralreef.geometry.Point2;
 import pl.graniec.coralreef.geometry.Triangle;
@@ -117,16 +120,6 @@ public class SimpleTriangulationAlgorithm implements TriangulationAlgorithm {
 		return i;
 	}
 	
-	/*
-	 * @see pl.graniec.coralreef.geometry.triangulation.TriangulationAlgorithm#triangulate(pl.graniec.coralreef.geometry.Geometry)
-	 */
-	public Triangle[] triangulate(Geometry geometry) {
-		// determine the verticles ordering
-		final VerticlesOrder verticlesOrder = getVerticlesOrder(geometry);
-		
-		return null;
-	}
-	
 	public static void main(String[] args) {
 		
 		final Geometry geometry = new Geometry();
@@ -138,6 +131,27 @@ public class SimpleTriangulationAlgorithm implements TriangulationAlgorithm {
 		geometry.addVerticle(new Point2(1, 4));
 		
 		System.out.println(getVerticlesOrder(geometry));
+		
+	}
+	
+	private List<Verticle> verticles = new LinkedList<Verticle>();
+	
+	/*
+	 * @see pl.graniec.coralreef.geometry.triangulation.TriangulationAlgorithm#triangulate(pl.graniec.coralreef.geometry.Geometry)
+	 */
+	public Triangle[] triangulate(Geometry geometry) {
+		// determine the verticles ordering
+		final VerticlesOrder verticlesOrder = getVerticlesOrder(geometry);
+		
+		// Build the verticles data.
+		// This tells which verticles are ears and which are not. 
+		buildVerticlesData(geometry, verticlesOrder);
+		
+		return null;
+	}
+
+	private void buildVerticlesData(Geometry geometry,
+			VerticlesOrder verticlesOrder) {
 		
 	}
 
