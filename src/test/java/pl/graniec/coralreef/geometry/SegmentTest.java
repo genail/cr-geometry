@@ -28,30 +28,23 @@
  */
 package pl.graniec.coralreef.geometry;
 
-import static org.junit.Assert.*;
-
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import junit.framework.TestCase;
 
 /**
  * @author Piotr Korzuszek <piotr.korzuszek@gmail.com>
  *
  */
-public class SegmentTest {
+public class SegmentTest extends TestCase {
 
-	@Before
 	public void setUp() throws Exception {
 	}
 
-	@After
 	public void tearDown() throws Exception {
 	}
 
 	/**
 	 * Test method for {@link pl.graniec.coralreef.geometry.Segment#intersectionPoint(pl.graniec.coralreef.geometry.Segment)}.
 	 */
-	@Test
 	public void testIntersectionPoint1() {
 		final Segment s1 = new Segment(-5, 0, 5, 0);
 		final Segment s2 = new Segment(0, -5, 0, 5);
@@ -64,7 +57,6 @@ public class SegmentTest {
 		assertEquals(0f, iPoint.y, 0.001);
 	}
 	
-	@Test
 	public void testIntersectionPoint2() {
 		final Segment s2 = new Segment(-5, 5, 5, 5);
 		final Segment s1 = new Segment(0, -5, 0, 5);
@@ -77,7 +69,6 @@ public class SegmentTest {
 		assertEquals(5f, iPoint.y, 0.001);
 	}
 	
-	@Test
 	public void testIntersectionPoint3() {
 		final Segment s1 = new Segment(-5, 6, 5, 6);
 		final Segment s2 = new Segment(0, -5, 0, 5);

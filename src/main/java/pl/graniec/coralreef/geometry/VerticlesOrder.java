@@ -32,9 +32,12 @@ package pl.graniec.coralreef.geometry;
  * @author Piotr Korzuszek <piotr.korzuszek@gmail.com>
  *
  */
-public enum VerticlesOrder {
+public final class VerticlesOrder {
 	/** Clockwise */
-	CW,
+	public static final int CW = 1;
 	/** Counter clockwise */
-	CCW
+	public static final int CCW = 2;
+	
+	private VerticlesOrder() {
+	}
 }

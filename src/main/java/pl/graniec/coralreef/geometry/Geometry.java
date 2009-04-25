@@ -39,7 +39,7 @@ import java.util.List;
  */
 public class Geometry {
 	/** Verticles that creates this geometry */
-	protected final List<Point2> verticles = new LinkedList<Point2>();
+	protected final List verticles = new LinkedList();
 	
 	public Geometry() {
 	}
@@ -48,17 +48,17 @@ public class Geometry {
 		verticles.add(point);
 	}
 	
-	public void addVerticles(Collection<Point2> verticles) {
+	public void addVerticles(Collection verticles) {
 		verticles.addAll(verticles);
 	}
 	
-	public void addVerticles(Point2... points) {
-		for (Point2 p : points) {
-			verticles.add(p);
+	public void addVerticles(Point2[] points) {
+		for (int i = 0; i < points.length; ++i) {
+			verticles.add(points[i]);
 		}
 	}
 	
 	public Point2[] getVerticles() {
-		return verticles.toArray(new Point2[verticles.size()]);
+		return (Point2[]) verticles.toArray(new Point2[verticles.size()]);
 	}
 }

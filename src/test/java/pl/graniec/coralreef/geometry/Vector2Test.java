@@ -28,30 +28,24 @@
  */
 package pl.graniec.coralreef.geometry;
 
-import static org.junit.Assert.*;
+import junit.framework.TestCase;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
 
 /**
  * @author Piotr Korzuszek <piotr.korzuszek@gmail.com>
  *
  */
-public class Vector2Test {
+public class Vector2Test extends TestCase {
 
-	@Before
 	public void setUp() throws Exception {
 	}
 
-	@After
 	public void tearDown() throws Exception {
 	}
 
 	/**
 	 * Test method for {@link pl.graniec.coralreef.geometry.Vector2#angle(float, float)}.
 	 */
-	@Test
 	public void testAngle() {
 		assertEquals(0f, Vector2.angle(1, 0), 0.0001f);
 		assertEquals(45f, Vector2.angle(1, 1), 0.0001f);
