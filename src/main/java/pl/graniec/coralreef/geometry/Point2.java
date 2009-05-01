@@ -73,6 +73,11 @@ public class Point2 {
 		return result;
 	}
 	
-	
+	/*
+	 * @see java.lang.Object#toString()
+	 */
+	public String toString() {
+		return Point2.class.getSimpleName() + "[x=" + x + ",y=" + y + "]";
+	}
 	
 }

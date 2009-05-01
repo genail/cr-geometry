@@ -52,6 +52,10 @@ public class Segment {
 		this.y2 = y2;
 	}
 	
+	public Segment(Point2 p1, Point2 p2) {
+		this(p1.x, p1.y, p2.x, p2.y);
+	}
+
 	/**
 	 * Tests if this and the <code>other</code> segments intersects
 	 * and retrieves the cross point if there is one. If not, the
@@ -62,6 +66,8 @@ public class Segment {
 	 * @param other Other segment to test
 	 * 
 	 * @return point of intersection or <code>null</code> if there is none.
+	 * 
+	 * @see #intersects(Segment)
 	 * 
 	 */
 	public final Point2 intersectionPoint(final Segment other) {
@@ -129,6 +135,20 @@ public class Segment {
 		
 	}
 	
+	/**
+	 * Checks if there is intersection between this segment
+	 * and <code>other</code> one.
+	 * 
+	 * @param other The other segment.
+	 * 
+	 * @return <code>true</code> if there is a intersection.
+	 * 
+	 * @see #intersectionPoint(Segment)
+	 */
+	public boolean intersects(Segment other) {
+		return intersectionPoint(other) != null;
+	}
+
 	public final float length() {
 		return length(x1, y1, x2, y2);
 	}

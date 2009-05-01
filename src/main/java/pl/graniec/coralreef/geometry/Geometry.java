@@ -61,4 +61,11 @@ public class Geometry {
 	public Point2[] getVerticles() {
 		return (Point2[]) verticles.toArray(new Point2[verticles.size()]);
 	}
+	
+	/*
+	 * @see java.lang.Object#toString()
+	 */
+	public String toString() {
+		return Geometry.class.getSimpleName() + "[verticles=" + verticles + "]";
+	}
 }
