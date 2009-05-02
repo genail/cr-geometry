@@ -44,6 +44,11 @@ public class Point2 {
 		this.y = y;
 	}
 
+	public Point2(Point2 other) {
+		this.x = other.x;
+		this.y = other.y;
+	}
+
 	/*
 	 * @see java.lang.Object#equals(java.lang.Object)
 	 */

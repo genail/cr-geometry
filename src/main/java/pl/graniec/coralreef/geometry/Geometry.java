@@ -29,6 +29,7 @@
 package pl.graniec.coralreef.geometry;
 
 import java.util.Collection;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -42,6 +43,19 @@ public class Geometry {
 	protected final List verticles = new LinkedList();
 	
 	public Geometry() {
+	}
+	
+	/**
+	 * The copy constructor of Geometry object. It creates a
+	 * new geometry from totally new {@link Point2} objects so
+	 * two copies can act separately.
+	 * 
+	 * @param other The other Geometry object to copy.
+	 */
+	public Geometry(final Geometry other) {
+		for (final Iterator itor = other.verticles.iterator(); itor.hasNext();) {
+			verticles.add(new Point2((Point2) itor.next()));
+		}
 	}
 	
 	public void addVerticle(Point2 point) {
@@ -67,5 +81,20 @@ public class Geometry {
 	 */
 	public String toString() {
 		return Geometry.class.getSimpleName() + "[verticles=" + verticles + "]";
+	}
+	
+	/**
+	 * Translates coordinates of all verticles by <code>x</code> and
+	 * <code>y</code>.
+	 * 
+	 * @param x The translation value for X coordinate.
+	 * @param y The translation value for Y coordinate.
+	 */
+	public void translate(float x, float y) {
+		for (final Iterator itor = verticles.iterator(); itor.hasNext();) {
+			final Point2 p = (Point2) itor.next();
+			p.x += x;
+			p.y += y;
+		}
 	}
 }

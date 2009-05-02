@@ -55,7 +55,7 @@ public class Segment {
 	public Segment(Point2 p1, Point2 p2) {
 		this(p1.x, p1.y, p2.x, p2.y);
 	}
-
+	
 	/**
 	 * Tests if this and the <code>other</code> segments intersects
 	 * and retrieves the cross point if there is one. If not, the
@@ -134,7 +134,7 @@ public class Segment {
 		);
 		
 	}
-	
+
 	/**
 	 * Checks if there is intersection between this segment
 	 * and <code>other</code> one.
@@ -148,8 +148,12 @@ public class Segment {
 	public boolean intersects(Segment other) {
 		return intersectionPoint(other) != null;
 	}
-
+	
 	public final float length() {
 		return length(x1, y1, x2, y2);
+	}
+
+	public String toString() {
+		return Segment.class.getSimpleName() + "[x1=" + x1 + ",y1=" + y1 + ",x2=" + x2 + ",y2=" + y2 + "]";
 	}
 }
