@@ -13,15 +13,15 @@
     <groupId>pl.graniec</groupId>
     <artifactId>cr-geometry</artifactId>
     <packaging>jar</packaging>
-    <version>0.1-SNAPSHOT</version>
+    <version>0.1</version>
     
     <name>Coral Reef Geometry Library</name>
     <url>http://graniec.pl/</url>
     
     <scm>
-        <connection>scm:svn:svn://atom/general/CoralReef/trunk/cr-geometry</connection>
-        <developerConnection>scm:svn:svn://atom/general/CoralReef/trunk/cr-geometry</developerConnection>
-        <url>svn://atom/general/CoralReef/trunk/cr-geometry</url>
+        <connection>scm:svn:svn://atom/general/CoralReef/tags/cr-geometry-0.1</connection>
+        <developerConnection>scm:svn:svn://atom/general/CoralReef/tags/cr-geometry-0.1</developerConnection>
+        <url>svn://atom/general/CoralReef/tags/cr-geometry-0.1</url>
     </scm>
 
     <dependencies>
