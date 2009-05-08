@@ -18,12 +18,6 @@
     <name>Coral Reef Geometry Library</name>
     <url>http://graniec.pl/</url>
     
-    <scm>
-        <connection>scm:svn:svn://atom/general/CoralReef/trunk/cr-geometry</connection>
-        <developerConnection>scm:svn:svn://atom/general/CoralReef/trunk/cr-geometry</developerConnection>
-        <url>svn://atom/general/CoralReef/trunk/cr-geometry</url>
-    </scm>
-
     <dependencies>
     
         <!-- JUnit -->
