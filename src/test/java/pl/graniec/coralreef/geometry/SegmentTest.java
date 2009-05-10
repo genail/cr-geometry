@@ -78,5 +78,23 @@ public class SegmentTest extends TestCase {
 		
 		assertNull(iPoint);
 	}
+	
+	public void testResize() {
+		final Segment s1 = new Segment(0, 0, 10, 0);
+		s1.resize(2.0f);
+		
+		assertEquals(-5f, s1.x1, 0.001f);
+		assertEquals(15f, s1.x2, 0.001f);
+		assertEquals(0f, s1.y1, 0.001f);
+		assertEquals(0f, s1.y2, 0.001f);
+		
+		final Segment s2 = new Segment(0, 0, 0, 10);
+		s2.resize(0.5f);
+		
+		assertEquals(0f, s2.x1, 0.001f);
+		assertEquals(0f, s2.x2, 0.001f);
+		assertEquals(2.5f, s2.y1, 0.001f);
+		assertEquals(7.5f, s2.y2, 0.001f);
+	}
 
 }

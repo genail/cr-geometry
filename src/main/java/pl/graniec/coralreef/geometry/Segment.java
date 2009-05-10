@@ -153,6 +153,33 @@ public class Segment {
 		return length(x1, y1, x2, y2);
 	}
 
+	/**
+	 * Resizes the segment by given <code>factor</code>.
+	 * Factor of value <code>1.0f</code> means no resizing,
+	 * <code>2.0f</code> means double length, and <code>0.5f</code>
+	 * means half length.
+	 * <p>
+	 * Segment is expanded or shrank on both ends.
+	 * @param factor
+	 */
+	public final void resize(final float factor) {
+		
+		final float deltaX = x2 - x1;
+		final float deltaY = y2 - y1;
+		
+		final float midX = x1 + deltaX / 2;
+		final float midY = y1 + deltaY / 2;
+		
+		final float partX = deltaX * factor / 2;
+		final float partY = deltaY * factor / 2;
+		
+		x1 = midX - partX;
+		y1 = midY - partY;
+		x2 = midX + partX;
+		y2 = midY + partY;
+		
+	}
+	
 	public String toString() {
 		return Segment.class.getSimpleName() + "[x1=" + x1 + ",y1=" + y1 + ",x2=" + x2 + ",y2=" + y2 + "]";
 	}
