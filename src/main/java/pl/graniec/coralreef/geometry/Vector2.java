@@ -87,6 +87,19 @@ public class Vector2 {
 	}
 	
 	/**
+	 * Adds <code>other</code> vector to this one.
+	 * 
+	 * @param other The other vector.
+	 * @return Reference to this object.
+	 */
+	public final Vector2 add(final Vector2 other) {
+		x += other.x;
+		y += other.y;
+		
+		return this;
+	}
+	
+	/**
 	 * Calculates angle of given vector.
 	 * The value is calculated from positive X axis and increasing
 	 * counter clockwise.
@@ -96,5 +109,18 @@ public class Vector2 {
 	 */
 	public final float angle() {
 		return angle(x, y);
+	}
+	
+	/**
+	 * Substracts <code>other</code> vector from this one.
+	 *   
+	 * @param other The other vector.
+	 * @return Reference to this object.
+	 */
+	public final Vector2 substract(final Vector2 other) {
+		x -= other.x;
+		y -= other.y;
+		
+		return this;
 	}
 }

@@ -34,19 +34,16 @@ package pl.graniec.coralreef.geometry;
  * @author Piotr Korzuszek <piotr.korzuszek@gmail.com>
  *
  */
-public class Point2 {
+public class Point2 extends Vector2 {
 	/** The coordinated that point is located on */
 	public float x, y;
 
-	public Point2(float x, float y) {
-		super();
-		this.x = x;
-		this.y = y;
+	public Point2(final float x, final float y) {
+		super(x, y);
 	}
 
 	public Point2(Point2 other) {
-		this.x = other.x;
-		this.y = other.y;
+		super(other.x, other.y);
 	}
 
 	/*
@@ -84,5 +81,5 @@ public class Point2 {
 	public String toString() {
 		return Point2.class.getSimpleName() + "[x=" + x + ",y=" + y + "]";
 	}
-	
+
 }
