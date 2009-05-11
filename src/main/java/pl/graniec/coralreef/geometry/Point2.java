@@ -36,7 +36,7 @@ package pl.graniec.coralreef.geometry;
  */
 public class Point2 extends Vector2 {
 	/** The coordinated that point is located on */
-	public float x, y;
+//	public float x, y;
 
 	public Point2(final float x, final float y) {
 		super(x, y);
