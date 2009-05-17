@@ -60,7 +60,7 @@ public class SegmentTest extends TestCase {
 	public void testIntersectionPoint2() {
 		// point on line test
 		final Segment s1 = new Segment(0, -5, 0, 5);
-		final Segment s2 = new Segment(-5, 5, 5, 5);
+		final Segment s2 = new Segment(-5, 5f, 5, 5f);
 		
 		final Point2 iPoint = s1.intersectionPoint(s2);
 		

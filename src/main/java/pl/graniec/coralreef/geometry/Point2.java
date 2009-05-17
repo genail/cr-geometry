@@ -35,8 +35,6 @@ package pl.graniec.coralreef.geometry;
  *
  */
 public class Point2 extends Vector2 {
-	/** The coordinated that point is located on */
-//	public float x, y;
 
 	public Point2(final float x, final float y) {
 		super(x, y);
@@ -64,17 +62,6 @@ public class Point2 extends Vector2 {
 		return true;
 	}
 
-	/*
-	 * @see java.lang.Object#hashCode()
-	 */
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + Float.floatToIntBits(x);
-		result = prime * result + Float.floatToIntBits(y);
-		return result;
-	}
-	
 	/*
 	 * @see java.lang.Object#toString()
 	 */

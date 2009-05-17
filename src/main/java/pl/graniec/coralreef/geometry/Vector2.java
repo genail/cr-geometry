@@ -79,6 +79,8 @@ public class Vector2 {
 	}
 	
 	public float x, y;
+	private float hx, hy;
+	private int hash;
 	
 	public Vector2(float x, float y) {
 		super();
@@ -109,6 +111,25 @@ public class Vector2 {
 	 */
 	public final float angle() {
 		return angle(x, y);
+	}
+	
+	/*
+	 * @see java.lang.Object#hashCode()
+	 */
+	public int hashCode() {
+		
+		if (x != hx || y != hx || hash == 0) {
+			hx = x;
+			hy = y;
+			
+			final int prime = 31;
+			hash = 1;
+			hash = prime * hash + Float.floatToIntBits(x);
+			hash = prime * hash + Float.floatToIntBits(y);
+		}
+		
+		return hash;
+		
 	}
 	
 	/**
