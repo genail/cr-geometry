@@ -34,25 +34,17 @@ import junit.framework.TestCase;
  * @author chudy
  *
  */
-public class LineTest extends TestCase {
+public class Point2Test extends TestCase {
 
 	/**
-	 * Test method for {@link pl.graniec.coralreef.geometry.Line#Line(pl.graniec.coralreef.geometry.Point2, pl.graniec.coralreef.geometry.Point2)}.
+	 * Test method for {@link pl.graniec.coralreef.geometry.Point2#distanceTo(pl.graniec.coralreef.geometry.Line)}.
 	 */
-	public void testLinePoint2Point2() {
-		final Line line = new Line(new Point2(1, 2), new Point2(3, 3));
+	public void testDistanceTo() {
+		final Line line = new Line(new Point2(-1, 0), new Point2(1, 0));
 		
-		assertEquals(1, line.a, 0.0001f);
-		assertEquals(-2, line.b, 0.0001f);
-		assertEquals(3, line.c, 0.0001f);
-	}
-	
-	public void testLineSegment() {
-		final Line line = new Line(new Segment(new Point2(1, 2), new Point2(3, 3)));
-		
-		assertEquals(1, line.a, 0.0001f);
-		assertEquals(-2, line.b, 0.0001f);
-		assertEquals(3, line.c, 0.0001f);
+		assertEquals(2, new Point2(0, 2).distanceTo(line), 0.0001f);
+		assertEquals(0, new Point2(0, 0).distanceTo(line), 0.0001f);
+		assertEquals(2, new Point2(0, -2).distanceTo(line), 0.0001f);
 	}
 
 }

@@ -33,6 +33,11 @@ public class Line {
 	public float a, b, c;
 
 	public Line(float a, float b, float c) {
+		
+		if (a == 0 && b == 0) {
+			throw new RuntimeException("a and b cannot be 0 at the same time"); 
+		}
+		
 		this.a = a;
 		this.b = b;
 		this.c = c;
@@ -42,6 +47,12 @@ public class Line {
 		a = p2.y - p1.y;
 		b = p1.x - p2.x;
 		c = -(a * p1.x) - (b * p1.y);
+	}
+	
+	public Line(Segment s) {
+		a = s.y2 - s.y1;
+		b = s.x1  - s.x2;
+		c = -(a * s.x1) - (b * s.y1);
 	}
 	
 	/* (non-Javadoc)

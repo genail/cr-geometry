@@ -68,5 +68,17 @@ public class Point2 extends Vector2 {
 	public String toString() {
 		return Point2.class.getSimpleName() + "[x=" + x + ",y=" + y + "]";
 	}
+	
+	/**
+	 * Calculates the distance from this point to given <code>line</code>.
+	 * @param line The line.
+	 * @return Distance to the line.
+	 */
+	public float distanceTo(Line line) {
+		return (float) (
+				Math.abs(line.a * x + line.b * y + line.c)
+				/ Math.sqrt(line.a * line.a + line.b * line.b)
+		);
+	}
 
 }
