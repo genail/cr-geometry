@@ -53,6 +53,12 @@ public class Vector2 {
 		return (asin >= 0 ? acos : -acos);
 	}
 
+	/**
+	 * Calculates length of a vector |<code>x</code>, <code>y</code>|
+	 * @param x
+	 * @param y
+	 * @return
+	 */
 	public static final float length(final float x, final float y) {
 		return (float) StrictMath.sqrt(x * x + y * y);
 	}

@@ -44,6 +44,52 @@ public class Point2 extends Vector2 {
 		super(other.x, other.y);
 	}
 
+	/**
+	 * Calculates the distance from this point to given <code>line</code>.
+	 * @param line The line.
+	 * @return Distance to the line.
+	 */
+	public final float distanceTo(Line line) {
+		return (float) (
+				Math.abs(line.a * x + line.b * y + line.c)
+				/ Math.sqrt(line.a * line.a + line.b * line.b)
+		);
+	}
+
+	public final float distanceTo(Point2 other) {
+		return Vector2.length(this.x - other.x, this.y - other.y);
+	}
+	
+	/**
+	 * Calculates the distance from this point to given <code>segment</code>.
+	 * <p>
+	 * Given result is a distance to the closest point on this segment.
+	 * 
+	 * @param segment The segment.
+	 * @return Distance to given segment.
+	 */
+	public final float distanceTo(Segment segment) {
+		final float b = segment.length();
+		final float bb = b * b;
+		
+		final float c1 = Vector2.length(this.x - segment.x1, this.y - segment.y1);
+		final float c2 = Vector2.length(this.x - segment.x2, this.y - segment.y2);
+		
+		final float c1c1 = c1 * c1;
+		final float c2c2 = c2 * c2;
+		
+		// check if there is perpendicular line that connects this point with segment
+		if (c2c2 <= bb + c1c1 && c1c1 <= bb + c2c2) {
+			// get distance to line
+			return distanceTo(new Line(segment));
+		}
+		else {
+			// lower distance to point
+			return c1 < c2 ? c1 : c2;
+		}
+		
+	}
+	
 	/*
 	 * @see java.lang.Object#equals(java.lang.Object)
 	 */
@@ -61,24 +107,12 @@ public class Point2 extends Vector2 {
 			return false;
 		return true;
 	}
-
+	
 	/*
 	 * @see java.lang.Object#toString()
 	 */
 	public String toString() {
 		return Point2.class.getSimpleName() + "[x=" + x + ",y=" + y + "]";
-	}
-	
-	/**
-	 * Calculates the distance from this point to given <code>line</code>.
-	 * @param line The line.
-	 * @return Distance to the line.
-	 */
-	public float distanceTo(Line line) {
-		return (float) (
-				Math.abs(line.a * x + line.b * y + line.c)
-				/ Math.sqrt(line.a * line.a + line.b * line.b)
-		);
 	}
 
 }

@@ -46,5 +46,17 @@ public class Point2Test extends TestCase {
 		assertEquals(0, new Point2(0, 0).distanceTo(line), 0.0001f);
 		assertEquals(2, new Point2(0, -2).distanceTo(line), 0.0001f);
 	}
+	
+	public void testDistanceToSegment() {
+		final Segment segment = new Segment(new Point2(-2, 0), new Point2(2, 0));
+		
+		assertEquals(2, new Point2(0, 2).distanceTo(segment), 0.0001f);
+		assertEquals(2, new Point2(2, 2).distanceTo(segment), 0.0001f);
+		assertEquals(2, new Point2(-2, 2).distanceTo(segment), 0.0001f);
+		assertEquals(2, new Point2(-4, 0).distanceTo(segment), 0.0001f);
+		assertEquals(1, new Point2(-3, 0).distanceTo(segment), 0.0001f);
+		assertEquals(2, new Point2(4, 0).distanceTo(segment), 0.0001f);
+		assertEquals(1, new Point2(3, 0).distanceTo(segment), 0.0001f);
+	}
 
 }
