@@ -56,5 +56,29 @@ public class Vector2Test extends TestCase {
 		assertEquals(-90f, Vector2.angle(0, -1), 0.0001f);
 		assertEquals(-45f, Vector2.angle(1, -1), 0.0001f);
 	}
+	
+	public void testCreateFromAngle() {
+		Vector2 v;
+		
+		v = new Vector2(0f);
+		
+		assertEquals(1f, v.x, 0.0001f);
+		assertEquals(0f, v.y, 0.0001f);
+		
+		v = new Vector2(90f);
+		
+		assertEquals(0f, v.x, 0.0001f);
+		assertEquals(1f, v.y, 0.0001f);
+		
+		v = new Vector2(180f);
+		
+		assertEquals(-1f, v.x, 0.0001f);
+		assertEquals(0f, v.y, 0.0001f);
+		
+		v = new Vector2(270f);
+		
+		assertEquals(0f, v.x, 0.0001f);
+		assertEquals(-1f, v.y, 0.0001f);
+	}
 
 }

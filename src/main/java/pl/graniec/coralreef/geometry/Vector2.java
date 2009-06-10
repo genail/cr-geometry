@@ -88,6 +88,20 @@ public class Vector2 {
 	private float hx, hy;
 	private int hash;
 	
+	/**
+	 * Builds a new vector from given <code>angleDegrees</code>.
+	 * This parameter must be an angle that has 0 on positive X axis
+	 * and is increasing counter clockwise.
+	 * <p>
+	 * As result there will be normalized vector pointing to that direction.
+	 * 
+	 * @param angleDegrees Degrees value.
+	 */
+	public Vector2(float angleDegrees) {
+		x = (float) Math.cos(Math.toRadians(angleDegrees));
+		y = (float) Math.sin(Math.toRadians(angleDegrees));
+	}
+	
 	public Vector2(float x, float y) {
 		super();
 		this.x = x;
