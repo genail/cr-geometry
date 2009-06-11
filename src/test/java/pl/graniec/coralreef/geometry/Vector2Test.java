@@ -80,5 +80,16 @@ public class Vector2Test extends TestCase {
 		assertEquals(0f, v.x, 0.0001f);
 		assertEquals(-1f, v.y, 0.0001f);
 	}
+	
+	public void testNormalize() {
+		Vector2 v1, v2;
+		
+		v1 = new Vector2(5, 10);
+		v2 = new Vector2(v1);
+		
+		v2.normalize();
+		
+		assertEquals(v1.angle(), v2.angle(), 0.001f);
+	}
 
 }

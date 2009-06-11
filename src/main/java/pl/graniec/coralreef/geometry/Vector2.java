@@ -108,6 +108,10 @@ public class Vector2 {
 		this.y = y;
 	}
 	
+	public Vector2(Vector2 other) {
+		this(other.x, other.y);
+	}
+	
 	/**
 	 * Adds <code>other</code> vector to this one.
 	 * 
@@ -150,6 +154,38 @@ public class Vector2 {
 		
 		return hash;
 		
+	}
+	
+	/**
+	 * Calculates length of this vector.
+	 * 
+	 * @return Length of this vector.
+	 */
+	public final float length() {
+		return Vector2.length(x, y);
+	}
+	
+	/**
+	 * Multiplies this vector by <code>value</code>. The result
+	 * is stored in current object.
+	 * 
+	 * @param value Value to multiply by.
+	 * @return This object instance.
+	 */
+	public final Vector2 multiply(float value) {
+		x *= value;
+		y *= value;
+		
+		return this;
+	}
+	
+	public final Vector2 normalize() {
+		final float length = length();
+		
+		x /= length;
+		y /= length;
+		
+		return this;
 	}
 	
 	/**
