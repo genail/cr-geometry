@@ -137,6 +137,17 @@ public class Vector2 {
 		return angle(x, y);
 	}
 	
+	/**
+	 * Calculates the dot product of this and
+	 * <code>other</code> vector.
+	 * 
+	 * @param other The other vector;
+	 * @return
+	 */
+	public final float dotProduct(Vector2 other) {
+		return this.x * other.x + this.y + other.y;
+	}
+	
 	/*
 	 * @see java.lang.Object#hashCode()
 	 */
