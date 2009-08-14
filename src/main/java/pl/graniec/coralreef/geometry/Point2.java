@@ -108,6 +108,10 @@ public class Point2 extends Vector2 {
 		return true;
 	}
 	
+	public final void set(Point2 other) {
+		set(other.x, other.y);
+	}
+	
 	/*
 	 * @see java.lang.Object#toString()
 	 */

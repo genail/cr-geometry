@@ -188,6 +188,15 @@ public class Vector2 {
 		return this;
 	}
 	
+	public final void set(float x, float y) {
+		this.x = x;
+		this.y = y;
+	}
+	
+	public final void set(Vector2 other) {
+		set(other.x, other.y);
+	}
+	
 	/**
 	 * Substracts <code>other</code> vector from this one.
 	 *   
