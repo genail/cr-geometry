@@ -220,4 +220,10 @@ public class Vector2 {
 		
 		return this;
 	}
+
+	public String toString() {
+		return "Vector2 [x=" + x + ", y=" + y + "]";
+	}
+	
+	
 }
