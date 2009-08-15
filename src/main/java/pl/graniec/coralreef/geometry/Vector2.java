@@ -145,7 +145,7 @@ public class Vector2 {
 	 * @return
 	 */
 	public final float dotProduct(Vector2 other) {
-		return this.x * other.x + this.y + other.y;
+		return this.x * other.x + this.y * other.y;
 	}
 	
 	/*
